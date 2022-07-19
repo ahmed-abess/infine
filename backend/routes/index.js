@@ -1,0 +1,11 @@
+const express = require('express')
+const stack = require('../controllers/stackCtrl')
+const op = require('../controllers/opCtrl')
+const router = express.Router()
+router.get('/op', op.getOps)
+router.get('/stacks', stack.getStacks)
+router.post('/stack', stack.setStack)
+router.delete('/stack/:stack', stack.deleteStack)
+router.patch('/stack/:stack', stack.updateStack)
+router.post('/op/:op/stack/:stack', stack.applayOperand)
+module.exports = router
