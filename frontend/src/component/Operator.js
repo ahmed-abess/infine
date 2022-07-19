@@ -19,10 +19,11 @@ export const Operator = ({setStackval,stackval}) => {
             setOperator(operators)
 
     },[operators])
-    console.log(operators)
+
     const handleStack=(e)=>{
-        console.log(e.target.value)
-        dispatch(applyOpStack({stack:stackval,op:e.target.value}))
+
+
+        dispatch(applyOpStack({stack:stackval,op:e.target.value==='/'?'dev': e.target.value}))
     }
     return(
         <>
